@@ -139,19 +139,19 @@ async function setValueAtAddress(
 
 async function main() {
   const participantList = [
-    tessera.member1.publicKey,
-    tessera.member3.publicKey,
+    tessera.google.publicKey,
+    tessera.vendor2.publicKey,
   ];
   const privacyGroupId = await createPrivacyGroup(
-    besu.member1.url,
+    besu.google.url,
     participantList
   );
   createContract(
-    besu.member1.url,
+    besu.google.url,
     privacyGroupId,
-    besu.member1.accountPrivateKey,
-    tessera.member1.publicKey,
-    tessera.member3.publicKey
+    besu.google.accountPrivateKey,
+    tessera.google.publicKey,
+    tessera.vendor2.publicKey
   )
     .then(async function (privateTxReceipt) {
       console.log("Address of transaction: ", privateTxReceipt.contractAddress);
@@ -163,24 +163,24 @@ async function main() {
         "Use the smart contracts 'get' function to read the contract's constructor initialized value .. "
       );
       await getValueAtAddress(
-        besu.member1.url,
-        "Member1",
+        besu.google.url,
+        "google",
         privateTxReceipt.contractAddress,
         contractAbi,
-        besu.member1.accountPrivateKey,
-        tessera.member1.publicKey,
+        besu.google.accountPrivateKey,
+        tessera.google.publicKey,
         privacyGroupId
       );
       console.log(
-        `Use the smart contracts 'set' function to update that value to ${newValue} .. - from member1 to member3`
+        `Use the smart contracts 'set' function to update that value to ${newValue} .. - from google to vendor2`
       );
       await setValueAtAddress(
-        besu.member1.url,
+        besu.google.url,
         privateTxReceipt.contractAddress,
         newValue,
         contractAbi,
-        besu.member1.accountPrivateKey,
-        tessera.member1.publicKey,
+        besu.google.accountPrivateKey,
+        tessera.google.publicKey,
         privacyGroupId
       );
       //wait for the blocks to propogate to the other nodes
@@ -189,37 +189,37 @@ async function main() {
         "Verify the private transaction is private by reading the value from all three members .. "
       );
       await getValueAtAddress(
-        besu.member1.url,
-        "Member1",
+        besu.google.url,
+        "google",
         privateTxReceipt.contractAddress,
         contractAbi,
-        besu.member1.accountPrivateKey,
-        tessera.member1.publicKey,
+        besu.google.accountPrivateKey,
+        tessera.google.publicKey,
         privacyGroupId
       ).catch(() => {
-        console.log("Member1 cannot obtain value");
+        console.log("google cannot obtain value");
       });
       await getValueAtAddress(
-        besu.member2.url,
-        "Member2",
+        besu.vendor1.url,
+        "vendor1",
         privateTxReceipt.contractAddress,
         contractAbi,
-        besu.member2.accountPrivateKey,
-        tessera.member2.publicKey,
+        besu.vendor1.accountPrivateKey,
+        tessera.vendor1.publicKey,
         privacyGroupId
       ).catch(() => {
-        console.log("Member2 cannot obtain value");
+        console.log("vendor1 cannot obtain value");
       });
       await getValueAtAddress(
-        besu.member3.url,
-        "Member3",
+        besu.vendor2.url,
+        "vendor2",
         privateTxReceipt.contractAddress,
         contractAbi,
-        besu.member3.accountPrivateKey,
-        tessera.member3.publicKey,
+        besu.vendor2.accountPrivateKey,
+        tessera.vendor2.publicKey,
         privacyGroupId
       ).catch(() => {
-        console.log("Member3 cannot obtain value");
+        console.log("vendor2 cannot obtain value");
       });
     })
     .catch(console.error);

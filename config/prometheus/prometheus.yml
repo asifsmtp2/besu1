@@ -67,53 +67,53 @@ scrape_configs:
       static_configs:
         - targets: [ newnode:9545 ]        
 
-    - job_name: member1besu
+    - job_name: googlebesu
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets: [ member1besu:9545 ]
+        - targets: [ googlebesu:9545 ]
 
-    - job_name: member2besu
+    - job_name: vendor1besu
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets: [ member2besu:9545 ]
+        - targets: [ vendor1besu:9545 ]
 
-    - job_name: member3besu
+    - job_name: vendor2besu
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets: [ member3besu:9545 ]
+        - targets: [ vendor2besu:9545 ]
 
-    - job_name: member1tessera
+    - job_name: googletessera
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets: [ member1tessera:9545 ]
+        - targets: [ googletessera:9545 ]
 
-    - job_name: member2tessera
+    - job_name: vendor1tessera
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets: [ member2tessera:9545 ]
+        - targets: [ vendor1tessera:9545 ]
 
-    - job_name: member3tessera
+    - job_name: vendor2tessera
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets: [ member3tessera:9545 ]
+        - targets: [ vendor2tessera:9545 ]
 
     # all the nodes override themselves if given the same name
     # so we use dns based lookup and, replace labels to

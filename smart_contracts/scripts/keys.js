@@ -2,13 +2,13 @@
 
 module.exports = {
   tessera: {
-    member1: {
+    google: {
       publicKey: "BULeR8JyUWhiuuCMU/HLA0Q5pzkYT+cHII3ZKBey3Bo=",
     },
-    member2: {
+    vendor1: {
       publicKey: "QfeDAys9MPDs2XHExtc84jKGHxZg/aj52DTh0vtA3Xc=",
     },
-    member3: {
+    vendor2: {
       publicKey: "1iTZde/ndBHvzhcl7V68x44Vx7pl8nwx9LqnM/AfJUg=",
     },
   },
@@ -23,8 +23,8 @@ module.exports = {
       accountPrivateKey:
         "0x60bbe10a196a4e71451c0f6e9ec9beab454c2a5ac0542aa5b8b733ff5719fec3",
     },
-    member1: {
-      name: "member1",
+    google: {
+      name: "google",
       url: "http://127.0.0.1:20000",
       wsUrl: "ws://127.0.0.1:20001",
       privateUrl: "http://127.0.0.1:9081",
@@ -34,8 +34,8 @@ module.exports = {
       accountPrivateKey:
         "8bbbb1b345af56b560a5b20bd4b0ed1cd8cc9958a16262bc75118453cb546df7",
     },
-    member2: {
-      name: "member2",
+    vendor1: {
+      name: "vendor1",
       url: "http://127.0.0.1:20002",
       wsUrl: "ws://127.0.0.1:20003",
       privateUrl: "http://127.0.0.1:9082",
@@ -45,8 +45,8 @@ module.exports = {
       accountPrivateKey:
         "4762e04d10832808a0aebdaa79c12de54afbe006bfffd228b3abcc494fe986f9",
     },
-    member3: {
-      name: "member3",
+    vendor2: {
+      name: "vendor2",
       url: "http://127.0.0.1:20004",
       wsUrl: "ws://127.0.0.1:20005",
       privateUrl: "http://127.0.0.1:9083",

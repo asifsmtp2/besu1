@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs-extra');
 var ethers = require('ethers');
 
-// member1 details
+// google details
 const { accounts, besu } = require("../keys.js");
 const host = besu.rpcnode.url;
 // one of the seeded accounts
