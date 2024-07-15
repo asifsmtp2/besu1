@@ -205,6 +205,19 @@ When that completes open a new tab in your browser and go to `http://localhost:3
 and you can adopt a pet from there. NOTE: Once you have adopted a pet, you can also go to the block explorer `http://localhost:25000`
 and search for the transaction where you can see its details recorded. Metamask will also have a record of any transactions.
 
+sudo ./run.sh
+sudo ./remove.sh
+docker rm -f $(docker ps -aq)  
+docker network prune -f
+docker volume prune -f
+
+node scripts/public/serial_header.js
+
+cd smart_contracts
+npm install
+
+
+node scripts/public/public.js
 ## Moving to production
 
 When you are ready to move to production, please create new keys for your nodes using the
