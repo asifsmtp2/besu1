@@ -35,13 +35,13 @@
     ],
     "peer": [
         {
-            "url": "http://googletessera:9000"
+            "url": "http://member1tessera:9000"
         },
         {
-            "url": "http://vendor1tessera:9000"
+            "url": "http://member2tessera:9000"
         },
         {
-            "url": "http://vendor2tessera:9000"
+            "url": "http://member3tessera:9000"
         }
     ],
     "keys": {

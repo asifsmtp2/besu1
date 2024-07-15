@@ -5,7 +5,7 @@ const PromisePool = require("async-promise-pool");
 const { tessera, besu } = require("../keys.js");
 
 const chainId = 1337;
-const web3 = new Web3Quorum(new Web3(besu.google.url), chainId);
+const web3 = new Web3Quorum(new Web3(besu.member1.url), chainId);
 
 /*
   Transactions are sent in batches.
@@ -17,9 +17,9 @@ const BATCH_SIZE = 5;
 
 // options used to create a privacy group with only one member
 const privacyOptions = {
-  privateFrom: tessera.google.publicKey,
-  privateFor: [tessera.google.publicKey],
-  privateKey: besu.google.accountPrivateKey,
+  privateFrom: tessera.member1.publicKey,
+  privateFor: [tessera.member1.publicKey],
+  privateKey: besu.member1.accountPrivateKey,
 };
 
 const deployContractData =
@@ -58,7 +58,7 @@ function sendPMT(sender, enclaveKey, nonce) {
   };
 
   const tx = new Tx(rawTx);
-  tx.sign(Buffer.from(besu.google.accountPrivateKey, "hex"));
+  tx.sign(Buffer.from(besu.member1.accountPrivateKey, "hex"));
 
   const hexTx = `0x${tx.serialize().toString("hex")}`;
 

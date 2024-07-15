@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const Web3 = require('web3');
 
-// google details
+// member1 details
 const { tessera, besu, accounts } = require("../keys.js");
 const host = besu.rpcnode.url;
 

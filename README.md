@@ -145,9 +145,9 @@ npm install
 node scripts/privacy/private_tx.js
 ```
 
-which deploys the contract and sends an arbitrary value (47) from `google` to `vendor2`. Once done, it queries all three members (tessera)
-to check the value at an address, and you should observe that only `google` & `vendor2` have this information as they were involved in the transaction
-and that `vendor1` responds with a `0x` to indicate it is unaware of the transaction.
+which deploys the contract and sends an arbitrary value (47) from `Member1` to `Member3`. Once done, it queries all three members (tessera)
+to check the value at an address, and you should observe that only `Member1` & `Member3` have this information as they were involved in the transaction
+and that `Member2` responds with a `0x` to indicate it is unaware of the transaction.
 
 ```
 node scripts/privacy/private_tx.js
@@ -157,17 +157,17 @@ Waiting for transaction to be mined ...
 Address of transaction: 0x8220ca987f7bb7f99815d0ef64e1d8a072a2c167
 Use the smart contracts 'get' function to read the contract's constructor initialized value ..
 Waiting for transaction to be mined ...
-google value from deployed contract is: 0x000000000000000000000000000000000000000000000000000000000000002f
-Use the smart contracts 'set' function to update that value to 123 .. - from google to vendor2
+Member1 value from deployed contract is: 0x000000000000000000000000000000000000000000000000000000000000002f
+Use the smart contracts 'set' function to update that value to 123 .. - from member1 to member3
 Transaction hash: 0x387c6627fe87e235b0f2bbbe1b2003a11b54afc737dca8da4990d3de3197ac5f
 Waiting for transaction to be mined ...
 Verify the private transaction is private by reading the value from all three members ..
 Waiting for transaction to be mined ...
-google value from deployed contract is: 0x000000000000000000000000000000000000000000000000000000000000007b
+Member1 value from deployed contract is: 0x000000000000000000000000000000000000000000000000000000000000007b
 Waiting for transaction to be mined ...
-vendor1 value from deployed contract is: 0x
+Member2 value from deployed contract is: 0x
 Waiting for transaction to be mined ...
-vendor2 value from deployed contract is: 0x000000000000000000000000000000000000000000000000000000000000007b
+Member3 value from deployed contract is: 0x000000000000000000000000000000000000000000000000000000000000007b
 ```
 
 Further [documentation](https://besu.hyperledger.org/en/stable/Tutorials/Privacy/eeajs-Multinode-example/) for this example and a [video tutorial](https://www.youtube.com/watch?v=Menekt6-TEQ)

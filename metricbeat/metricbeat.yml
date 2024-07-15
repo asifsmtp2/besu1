@@ -8,9 +8,9 @@ metricbeat.modules:
   - validator3:9545
   - validator4:9545
   - rpcnode:9545
-  - googlebesu:9545
-  - vendor1besu:9545
-  - vendor2besu:9545
+  - member1besu:9545
+  - member2besu:9545
+  - member3besu:9545
   metrics_path: /metrics
 
 output.redis:
